@@ -26,6 +26,11 @@ def sort(array: list, n: int):
     return final, x + y + z
 
 
-x = input()
-x = list(map(int, x.split()))
-print(sort(x, len(x)))
+# array = input()
+# array = list(map(int, array.split()))
+
+file = open('integers.txt', 'r')
+array = file.read().split()
+array = list(map(int, array))
+final, x = sort(array, len(array))
+print(x)
