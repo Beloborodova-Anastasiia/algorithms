@@ -12,13 +12,13 @@ class Solution:
 
             match = i < len(s) and (s[i] == p[j] or p[j] == '.')
             if j + 1 < len(p) and p[j + 1] == '*':
-                cache[(i, j)] = (dfs(i, j + 2)          # don't use the *
+                cache[(i, j)] = (dfs(i, j + 2)                   # don't use the *
                                  or (match and dfs(i + 1, j)))   # use the *
                 return cache[(i, j)]
             if match:
                 cache[(i + 1, j + 1)] = dfs(i + 1, j + 1)
                 return cache[(i + 1, j + 1)]
-
+            cache[(i, j)] = False
             return False
         return dfs(0, 0)
 
