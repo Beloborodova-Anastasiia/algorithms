@@ -52,7 +52,8 @@ class Solution:
         for i in range(len(num)):
             if (
                 i < len(num) - 1
-                and self.roman_values_rom_keys[num[i]] < self.roman_values_rom_keys[num[i + 1]]
+                and (self.roman_values_rom_keys[num[i]]
+                     < self.roman_values_rom_keys[num[i + 1]])
             ):
                 result -= self.roman_values_rom_keys[num[i]]
             else:
